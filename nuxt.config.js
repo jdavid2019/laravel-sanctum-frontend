@@ -35,8 +35,41 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
   ],
-
+  router: {
+    middleware: ["auth"]
+  },
+  auth: {
+    // Options
+    strategies: {
+      laravelSanctum: {
+        provider: "laravel/sanctum",
+        url: "http://localhost:8000",
+        endpoints: {
+          login: {
+            url: '/api/v1/login'
+          },
+          logout: {
+            url: '/api/v1/logout'
+          },
+          user: {
+            url: '/api/user'
+          }
+        },
+        user: {
+          // false: si no quiere se muestre la info
+          property: false
+        }
+      }
+    },
+    redirect: {
+      login: "/login",
+      logout: "/",
+      home: "/dashboard"
+    }
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }

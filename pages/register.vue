@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col mx-auto">
         <div class="card">
-            Home page
+          Register
         </div>
       </div>
     </div>
@@ -11,5 +11,7 @@
 </template>
 
 <script>
-export default {}
+export default {
+  auth: false
+}
 </script>
