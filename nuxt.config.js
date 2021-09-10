@@ -39,6 +39,7 @@ export default {
     '@nuxtjs/auth-next'
   ],
   router: {
+    // Si quiero hacer un middleware independiente y no de manera global como aqui ver: https://nuxtjs.org/docs/2.x/directory-structure/middleware
     middleware: ["auth"]
   },
   auth: {
