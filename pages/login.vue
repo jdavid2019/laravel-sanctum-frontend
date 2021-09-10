@@ -18,8 +18,8 @@ export default {
   data() {
     return {
       form: {
-        email: 'joseph2019@gmail.com',
-        password: 'joseph',
+        email: 'max@gmail.com',
+        password: 'max',
       }
     }
   },
@@ -28,7 +28,7 @@ export default {
       this.$auth.loginWith('laravelSanctum', {
         data: this.form
       })
-      .then(response => console.log(response))
+      .then(response => console.log(response.data.token))
       .catch(error => alert(error))
     }
   }

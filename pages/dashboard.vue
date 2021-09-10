@@ -24,7 +24,13 @@ export default {
 
   },
   mounted() {
-    axios.get('http://127.0.0.1:8000/api/v1/user/all')
+    let session_token = '14|waTVEDk1nHAgqCqVqgeIeVQQLHyaCXjmsyAu09yM';
+    axios.get('http://127.0.0.1:8000/api/user/all', {
+      headers: {
+        'content-type' : 'application/json',
+        'Authorization': `Bearer ${session_token}`,
+      }
+    })
       .then(albumResponse=>{
         console.log(albumResponse.data)
       })
